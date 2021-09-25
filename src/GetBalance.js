@@ -5,6 +5,7 @@ import { ethers } from "ethers";
 export default function useEthBalance() {
   const [balance, setBalance] = useState(0);
 
+  var arrOfDAta = [];
   useEffect(() => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -19,6 +20,7 @@ export default function useEthBalance() {
         const value = parseFloat(ethers.utils.formatEther(rawBalance));
         console.log(value);
         setBalance(value);
+        arrOfDAta.push(value);
       });
   });
   return balance;

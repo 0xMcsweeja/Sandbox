@@ -2,26 +2,39 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: "Major Mono Display", monospace;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+button {
+  font-family: "Space Mono", monospace;
+}
+.boundingBox {
+  background-color: #282c34;
+  min-height: 90vh;
   color: white;
+  font-family: "Space Mono", monospace;
+  padding: 5%;
+  font-size: calc(10px + 2vmin);
+
+}
+.AccountBox {
+  background-color: #282c34;
+  color: white;
+  font-family: "Space Mono", monospace;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 2em;
+  font-size: calc(10px + 2vmin);
+  border-style: dashed;
+  
+  width: 70%;
 }
 
 .App-link {
