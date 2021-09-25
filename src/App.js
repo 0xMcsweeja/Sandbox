@@ -48,6 +48,7 @@ function App() {
       setCode(code);
       setStorage(storage);
     }
+    
   }
 
   // call the smart contract, read the current greeting value
@@ -86,15 +87,18 @@ function App() {
     <div className="App">
       <header className="App-header">Ethereum Development Sanbox</header>
       <div className="boundingBox">
-        <p>Connected to network: {network}</p>
-
+      <button onClick={connectWallet}>Connect Wallet</button>
+        <p className="networkname">network: {network}</p>
+        <div className="AccountAddress">
+        <p>Account: {account}</p>
+       
         <div className="AccountBox">
-          <button onClick={connectWallet}>Connect Wallet</button>
-          <p>Account: {account}</p>
+          
           <p>Balance: {balance} Ether</p>
           <p>Transactions: {transactions} </p>
           <p>Code: {code} </p>
           <p>Storage: {storage} </p>
+        </div>
         </div>
       </div>
     </div>

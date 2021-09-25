@@ -14,27 +14,57 @@
 
 button {
   font-family: "Space Mono", monospace;
-}
-.boundingBox {
+  border-radius: 20px;
+  padding: 1em;
   background-color: #282c34;
+  color: white;
+}
+.button:hover {
+  box-shadow: 0 4px #ab3c3c;
+  top: 2px;
+}
+.button:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 6px;
+}
+.networkname{
+  color:#363c49;
+  font-size: calc(10px + 1vmin);
+
+}
+
+.boundingBox {
+  border-top: dashed;
+  border-color: #363c49;
+  background-color: white;
   min-height: 90vh;
   color: white;
   font-family: "Space Mono", monospace;
-  padding: 5%;
+  padding: 2%;
   font-size: calc(10px + 2vmin);
-
+  width: 60%;
+  margin: 0 auto;
+}
+.AccountAddress {
+  font-size: calc(10px + 1vmin);
+  border-style: dashed;
+  border-radius: 2em;
+  padding-bottom: 1em;
+  margin: 0 auto;
+  background-color: white;
+  color:darkseagreen;
+  border-color: #363c49;
 }
 .AccountBox {
-  background-color: #282c34;
+  background-color: #363c49;
   color: white;
   font-family: "Space Mono", monospace;
   padding: 10px;
-  margin: 0 auto;
   border-radius: 2em;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   border-style: dashed;
-  
   width: 70%;
+  margin: 0 auto;
 }
 
 .App-link {
