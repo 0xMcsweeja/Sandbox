@@ -1,4 +1,4 @@
-# Basic Sample Hardhat Project
-![image](https://user-images.githubusercontent.com/89286697/134763633-da1ef179-3a41-427f-b9f4-6f1118dc68af.png)
+# Graphical playground environment for connecting to wallets / contracts and visualising their state
+![image](https://user-images.githubusercontent.com/89286697/134764379-7426599a-a249-49d6-93b3-dbd0fe20ae25.png)
 
 
