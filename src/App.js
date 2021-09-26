@@ -2,16 +2,13 @@ import "./App.css";
 import { useState } from "react";
 import { ethers } from "ethers";
 import Greeter from "./artifacts/contracts/Greeter.sol/Greeter.json";
-import Balance from "./balanceComponent";
-import Network from "./networkComponent";
-import useEthBalance from "./GetBalance";
+import Contract from "./contractComponent";
 
 // Update with the contract address logged out to the CLI when it was deployed
 const greeterAddress = "0xB0F974464eA9BbB2adA6a08B0AB226Cbc57F7261";
 
 function App() {
   // store greeting in local state
-  const [greeting, setGreetingValue] = useState();
   const [network, setNetwork] = useState();
   const [balance, setBalance] = useState();
   const [transactions, setTransactions] = useState();
@@ -38,7 +35,6 @@ function App() {
       var rawstorage = await provider.getStorageAt(address, 0);
       console.log(rawstorage);
       var storage = ethers.utils.arrayify(rawstorage);
-
       //console.log(block);
       setNetwork(network);
 
@@ -69,33 +65,35 @@ function App() {
   }
 
   // call the smart contract, send an update
-  async function setGreeting() {
-    if (!greeting) return;
-    if (typeof window.ethereum !== "undefined") {
-      await requestAccount();
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(greeterAddress, Greeter.abi, signer);
-      const transaction = await contract.setGreeting(greeting);
-      await transaction.wait();
-      fetchGreeting();
-    }
-  }
+  // async function setGreeting() {
+  //   if (!greeting) return;
+  //   if (typeof window.ethereum !== "undefined") {
+  //     await requestAccount();
+  //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //     const signer = provider.getSigner();
+  //     const contract = new ethers.Contract(greeterAddress, Greeter.abi, signer);
+  //     const transaction = await contract.setGreeting(greeting);
+  //     await transaction.wait();
+  //     fetchGreeting();
+  //   }
+  // }
 
   return (
     <div className="App">
-      <header className="App-header">Ethereum Development Sanbox</header>
+      <header className="App-header">Ethereum Development Sandbox</header>
       <div className="boundingBox">
-        <p>Connected to network: {network}</p>
-
-        <div className="AccountBox">
-          <button onClick={connectWallet}>Connect Wallet</button>
-          <p>Account: {account}</p>
-          <p>Balance: {balance} Ether</p>
-          <p>Transactions: {transactions} </p>
-          <p>Code: {code} </p>
-          <p>Storage: {storage} </p>
+        <button onClick={connectWallet}>Connect Wallet</button>
+        <p className="networkname">network: {network}</p>
+        <div className="AccountAddress">
+          <div className="AccountBox">
+            <p>Account: {account}</p>
+            <p>Balance: {balance} Ether</p>
+            <p>Transactions: {transactions} </p>
+            <p>Code: {code} </p>
+            <p>Storage: {storage} </p>
+          </div>
         </div>
+        <Contract></Contract>
       </div>
     </div>
   );
