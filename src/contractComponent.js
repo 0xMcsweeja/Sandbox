@@ -12,18 +12,16 @@ export default function Contract() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     var a = await provider.getCode(contractCode);
     setContractCode(a);
-    
   }
 
   return (
     <div className="ContractAddress">
-      <div className="inputWrap">
+      <button onClick={lookupContract}>Fetch Contract</button>
       <input
         onChangeCapture={(e) => setContractCode(e.target.value)}
         placeholder="Enter Contract Address"
       />
-      </div>
-      <button onClick={lookupContract}>Fetch Contract</button>
+
       <div classNAme="ContractBox">
         <p>Code in contract: {contractCode}</p>
       </div>
