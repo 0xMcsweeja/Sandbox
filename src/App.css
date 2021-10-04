@@ -19,14 +19,7 @@ button {
   background-color: #282c34;
   color: white;
 }
-.button:hover {
-  box-shadow: 0 4px #ab3c3c;
-  top: 2px;
-}
-.button:active {
-  box-shadow: 0 0 #ab3c3c;
-  top: 6px;
-}
+
 .networkname {
   color: #363c49;
   font-size: calc(10px + 1vmin);
@@ -48,11 +41,11 @@ button {
   font-size: calc(1em);
   border-style: solid;
   border-radius: 2em;
-  padding: 3%;
+  padding: 0%;
   display: grid;
   background-color: white;
   color: black;
-  border-color: #8898b9;
+  border-color: white;
   font-size: calc(3px + 1vmin);
 }
 
@@ -63,15 +56,14 @@ button {
   padding: 3%;
   word-wrap: break-word;
 
-  
   background-color: white;
   color: black;
-  border-color: #8898b9;
+  border-color: #363c49;
   font-size: calc(3px + 1vmin);
 }
 
-.inputWrap{
-  display:table;
+.inputWrap {
+  display: table;
   width: 100%;
 }
 .AccountBox {
@@ -82,8 +74,6 @@ button {
   border-radius: 2em;
   font-size: calc(10px + 0.5vmin);
   border-style: solid;
-  width: 70%;
-  margin: 0 auto;
 }
 .ContractBox {
   background-color: #363c49;
@@ -96,6 +86,7 @@ button {
   width: 70%;
   margin: 0 auto;
   word-wrap: break-word;
+  
 }
 
 .App-link {

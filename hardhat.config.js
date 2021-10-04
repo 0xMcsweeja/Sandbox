@@ -1,5 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
-require('dotenv').config();
+require("dotenv").config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -36,15 +36,15 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   defaultNetwork: "hardhat",
   paths: {
-    artifacts: './src/artifacts',
+    artifacts: "./src/artifacts",
   },
   networks: {
     hardhat: {},
     //using alchemy to handle network api. They provide us a http endpoint :)
     ropsten: {
       url: "https://eth-ropsten.alchemyapi.io/v2/1ii791VtMuTTl0mZZ-Snst2kZrIZQMIO",
-      accounts: [process.env.PRIVATE_KEY]
-    }
+      accounts: [process.env.PRIVATE_KEY],
+    },
   },
   solidity: "0.8.3",
 };
